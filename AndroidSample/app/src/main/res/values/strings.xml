@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidSample</string>
+    <string name="app_name">Layout Project</string>
     <string name="convert">Convert</string>
     <string name="dollars_string">dollars</string>
     <string name="no_value_string">No Value</string>
