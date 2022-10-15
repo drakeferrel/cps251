@@ -1,9 +1,9 @@
-package com.example.tipcalculator
+package com.example.addnamesavedata
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.tipcalculator.databinding.ActivityMainBinding
+import com.example.addnamesavedata.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
