@@ -43,8 +43,6 @@ class MainFragment : Fragment() {
             if (binding.addNameText.text.isNotEmpty()) {
                 viewModel.setAmount(binding.addNameText.text.toString())
                 binding.resultText.text = viewModel.getResult()
-            } else {
-                binding.resultText.text = "No Value"
             }
         }
     }
