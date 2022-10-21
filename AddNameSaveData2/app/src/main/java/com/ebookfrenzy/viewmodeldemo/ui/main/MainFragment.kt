@@ -1,4 +1,4 @@
-package com.ebookfrenzy.addnamesavedata2.ui.main
+package com.ebookfrenzy.viewmodeldemo.ui.main
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,8 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.ebookfrenzy.viewmodeldemo.R
 
-import com.ebookfrenzy.addnamesavedata2.databinding.MainFragmentBinding
+import com.ebookfrenzy.viewmodeldemo.databinding.MainFragmentBinding
 
 class MainFragment : Fragment() {
 
@@ -37,12 +38,14 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        binding.resultText.text = viewModel.getResult()
+        binding.resultText.text = viewModel.getResult().toString()
 
         binding.convertButton.setOnClickListener {
-            if (binding.addNameText.text.isNotEmpty()) {
-                viewModel.setAmount(binding.addNameText.text.toString())
-                binding.resultText.text = viewModel.getResult()
+            if (binding.dollarText.text.isNotEmpty()) {
+                viewModel.setAmount(binding.dollarText.text.toString())
+                binding.resultText.text = viewModel.getResult().toString()
+            } else {
+                binding.resultText.text = "No Value"
             }
         }
     }
