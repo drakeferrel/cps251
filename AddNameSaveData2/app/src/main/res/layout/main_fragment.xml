@@ -7,7 +7,7 @@
     <data>
         <variable
             name="myViewModel"
-            type="com.ebookfrenzy.viewmodeldemo.ui.main.MainViewModel" />
+            type="com.ebookfrenzy.addnamesavedata2.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,20 +20,24 @@
             android:id="@+id/resultText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text='@{safeUnbox(myViewModel.result) == 0.0 ? "Enter value" : String.valueOf(safeUnbox(myViewModel.result)) + " euros"}'
-            app:layout_constraintBottom_toTopOf="@+id/convertButton"
+            android:text='@{myViewModel.nameList}'
+            app:layout_constraintBottom_toTopOf="@+id/addNameButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dollarText" />
+            app:layout_constraintTop_toBottomOf="@+id/nameInput" />
 
         <EditText
-            android:id="@+id/dollarText"
+            android:id="@+id/nameInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="numberDecimal"
-            android:text="@={myViewModel.dollarValue}"
+            android:hint="@string/enter_name"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:text="@={myViewModel.nameInput}"
+            android:textColorHint="#757575"
             app:layout_constraintBottom_toTopOf="@+id/resultText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -41,11 +45,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/convertButton"
+            android:id="@+id/addNameButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> myViewModel.convertValue()}"
-            android:text="@string/convert"
+            android:onClick="@{() -> myViewModel.addName()}"
+            android:text="@string/add_name"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

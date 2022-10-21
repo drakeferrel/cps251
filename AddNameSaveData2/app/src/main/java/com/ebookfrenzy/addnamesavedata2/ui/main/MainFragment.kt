@@ -1,4 +1,4 @@
-package com.ebookfrenzy.viewmodeldemo.ui.main
+package com.ebookfrenzy.addnamesavedata2.ui.main
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,11 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.ebookfrenzy.viewmodeldemo.R
+import com.ebookfrenzy.addnamesavedata2.R
 
-import com.ebookfrenzy.viewmodeldemo.databinding.MainFragmentBinding
+import com.ebookfrenzy.addnamesavedata2.databinding.MainFragmentBinding
 
-import com.ebookfrenzy.viewmodeldemo.BR.myViewModel
+import com.ebookfrenzy.addnamesavedata2.BR.myViewModel
 
 class MainFragment : Fragment() {
 
