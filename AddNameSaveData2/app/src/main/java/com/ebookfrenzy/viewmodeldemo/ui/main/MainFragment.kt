@@ -6,48 +6,34 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.ebookfrenzy.viewmodeldemo.R
 
 import com.ebookfrenzy.viewmodeldemo.databinding.MainFragmentBinding
 
-class MainFragment : Fragment() {
+import com.ebookfrenzy.viewmodeldemo.BR.myViewModel
 
-    private var _binding: MainFragmentBinding? = null
-    private val binding get() = _binding!!
+class MainFragment : Fragment() {
 
     companion object {
         fun newInstance() = MainFragment()
     }
 
     private lateinit var viewModel: MainViewModel
+    lateinit var binding: MainFragmentBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = MainFragmentBinding.inflate(inflater, container, false)
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View {
+        binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false)
+        binding.setLifecycleOwner(this)
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        binding.setVariable(myViewModel, viewModel)
 
-        binding.resultText.text = viewModel.getResult().toString()
 
-        binding.convertButton.setOnClickListener {
-            if (binding.dollarText.text.isNotEmpty()) {
-                viewModel.setAmount(binding.dollarText.text.toString())
-                binding.resultText.text = viewModel.getResult().toString()
-            } else {
-                binding.resultText.text = "No Value"
-            }
-        }
     }
-
 }
