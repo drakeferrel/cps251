@@ -5,44 +5,62 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.LifecycleOwner
+import com.ebookfrenzy.lifecycleaware.ui.main.MainViewModel
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
-class DemoObserver: LifecycleObserver  {
-
-    private val LOG_TAG = "DemoObserver"
+class DemoObserver: LifecycleObserver {
+    var mv = MainViewModel
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     fun onResume() {
-        Log.i(LOG_TAG, "onResume")
+        checkForNull()
+        mv.textSum.value += "\n" + "onResume" + getTime()+showDivider()
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     fun onPause() {
-        Log.i(LOG_TAG, "onPause")
+        checkForNull()
+        mv.textSum.value += "\n" + "onPause" + getTime()+showDivider()
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {
-        Log.i(LOG_TAG, "onCreate")
+        checkForNull()
+        mv.textSum.value += "\n" + "onCreate" + getTime()
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun onStart() {
-        Log.i(LOG_TAG, "onStart")
+        checkForNull()
+        mv.textSum.value += "\n" + "onStart" + getTime()
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     fun onStop() {
-        Log.i(LOG_TAG, "onStop")
+        checkForNull()
+        mv.textSum.value += "\n" + "onStop" + getTime()
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun onDestroy() {
-        Log.i(LOG_TAG, "onDestroy")
+        checkForNull()
+        mv.textSum.value += "\n" + "onDestroy" + getTime()+showDivider()
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_ANY)
-    fun onAny(owner: LifecycleOwner, event: Lifecycle.Event) {
-        //Log.i(LOG_TAG, owner.lifecycle.currentState.name)
+    fun getTime(): String {
+        val current = LocalDateTime.now()
+
+        val formatter = DateTimeFormatter.ofPattern("HH:mm:ss.SSS")
+        return " was fired on "+current.format(formatter)
     }
 
+    fun showDivider(): String {
+        return "\n*****"
+    }
+
+    fun checkForNull() {
+        if (mv.textSum.value == null)
+            mv.textSum.value = ""
+    }
 }

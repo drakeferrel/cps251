@@ -1,7 +1,14 @@
 package com.ebookfrenzy.lifecycleaware.ui.main
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+    companion object {
+        var textSum: MutableLiveData<String> = MutableLiveData()
+    }
+
+    fun getText(): MutableLiveData<String> {
+        return textSum;
+    }
 }
