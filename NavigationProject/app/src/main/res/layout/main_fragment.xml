@@ -9,22 +9,23 @@
 
     <ImageView
         android:id="@+id/image2"
-        android:layout_width="166dp"
-        android:layout_height="163dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:contentDescription="@string/title_image2"
-        android:src="@drawable/android_image_1"
+        android:src="@drawable/android_image_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/displayImage2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/android_image_2" />
+        app:srcCompat="@drawable/android_image_2"
+        tools:ignore="ImageContrastCheck" />
 
     <ImageView
         android:id="@+id/image3"
-        android:layout_width="166dp"
-        android:layout_height="163dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:contentDescription="@string/title_image3"
-        android:src="@drawable/android_image_1"
+        android:src="@drawable/android_image_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/displayImage3"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,13 +64,14 @@
 
     <ImageView
         android:id="@+id/image1"
-        android:layout_width="166dp"
-        android:layout_height="163dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:contentDescription="@string/title_image1"
         android:src="@drawable/android_image_1"
         app:layout_constraintBottom_toTopOf="@+id/image2"
         app:layout_constraintEnd_toStartOf="@+id/displayImage1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
