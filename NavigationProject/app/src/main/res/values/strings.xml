@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Navigation Project</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="display_image1">Display Image 1</string>
+    <string name="display_image2">Display Image 2</string>
+    <string name="display_image3">Display Image 3</string>
+
+    <string name="title_image1">Image 1</string>
+    <string name="title_image2">Image 2</string>
+    <string name="title_image3">Image 3</string>
+
+    <string name="path_image1">android_image_1.jpg</string>
+    <string name="path_image2">android_image_2.jpg</string>
+    <string name="path_image3">android_image_3.jpg</string>
+
+    <string name="output">Output Image</string>
+</resources>
