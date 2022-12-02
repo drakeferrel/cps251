@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Contacts</string>
+    <string name="add_string">Add</string>
+    <string name="find_string">Find</string>
+    <string name="delete">Delete</string>
+    <string name="asc">Asc</string>
+    <string name="desc">Desc</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_phone">Enter Phone</string>
+    <string name="add_error">You must enter a name and phone number to add a contact.</string>
+    <string name="find_error">You must enter a search criteria in the name field.</string>
+</resources>

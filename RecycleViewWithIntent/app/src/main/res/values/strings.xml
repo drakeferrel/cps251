@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Recycle View With Intent</string>
+    <string name="action_settings">Settings</string>
+</resources>
